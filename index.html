@@ -1,98 +1,651 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<title>내가 생각하는 디자인</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>나의 디자인 철학</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family: 'Noto Sans KR', sans-serif;
+      background:#f5f5f5;
+      color:#111;
+      line-height:1.8;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    ul{
+      list-style:none;
+    }
+
+    /* HEADER */
+
+    header{
+      width:100%;
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+
+    .hero{
+      max-width:900px;
+    }
+
+    .hero h1{
+      font-size:72px;
+      font-weight:900;
+      margin-bottom:20px;
+      letter-spacing:-2px;
+    }
+
+    .hero p{
+      font-size:22px;
+      font-weight:300;
+      opacity:0.9;
+    }
+
+    /* NAV */
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:white;
+      border-bottom:1px solid #ddd;
+    }
+
+    .nav-inner{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
+    }
+
+    .logo{
+      font-size:22px;
+      font-weight:800;
+    }
+
+    nav ul{
+      display:flex;
+      gap:30px;
+    }
+
+    nav li{
+      font-size:15px;
+      color:#555;
+      transition:0.3s;
+    }
+
+    nav li:hover{
+      color:black;
+    }
+
+    /* COMMON */
+
+    section{
+      width:90%;
+      max-width:1200px;
+      margin:120px auto;
+    }
+
+    .section-title{
+      font-size:52px;
+      font-weight:900;
+      margin-bottom:20px;
+      letter-spacing:-1px;
+    }
+
+    .section-subtitle{
+      color:#666;
+      margin-bottom:60px;
+      font-size:18px;
+    }
+
+    /* ABOUT */
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .about-image{
+      height:650px;
+      background:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      border-radius:30px;
+    }
+
+    .about-text h3{
+      font-size:34px;
+      margin-bottom:25px;
+    }
+
+    .about-text p{
+      margin-bottom:25px;
+      color:#444;
+      font-size:17px;
+    }
+
+    .keyword-box{
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+      margin-top:30px;
+    }
+
+    .keyword{
+      padding:12px 22px;
+      border:1px solid #111;
+      border-radius:50px;
+      font-size:14px;
+      transition:0.3s;
+    }
+
+    .keyword:hover{
+      background:black;
+      color:white;
+    }
+
+    /* DESIGN PHILOSOPHY */
+
+    .philosophy-wrap{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:25px;
+    }
+
+    .card{
+      background:white;
+      padding:40px;
+      border-radius:25px;
+      transition:0.3s;
+      border:1px solid #eee;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    .card h3{
+      font-size:28px;
+      margin-bottom:20px;
+    }
+
+    .card p{
+      color:#555;
+      margin-bottom:20px;
+    }
+
+    .card ul li{
+      margin-bottom:10px;
+      color:#333;
+    }
+
+    /* STYLE */
+
+    .style-section{
+      background:#111;
+      color:white;
+      border-radius:40px;
+      padding:80px;
+    }
+
+    .style-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:40px;
+      margin-top:50px;
+    }
+
+    .style-item{
+      border-top:1px solid rgba(255,255,255,0.3);
+      padding-top:25px;
+    }
+
+    .style-item h4{
+      font-size:26px;
+      margin-bottom:15px;
+    }
+
+    .style-item p{
+      color:#ccc;
+      font-size:15px;
+    }
+
+    /* PROCESS */
+
+    .process-wrap{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
+    .process{
+      background:white;
+      padding:35px;
+      border-radius:20px;
+      border:1px solid #eee;
+    }
+
+    .process span{
+      font-size:14px;
+      color:#999;
+      font-weight:700;
+    }
+
+    .process h3{
+      font-size:24px;
+      margin:15px 0;
+    }
+
+    .process p{
+      color:#555;
+      font-size:15px;
+    }
+
+    /* GOAL */
+
+    .goal{
+      text-align:center;
+      padding:120px 20px;
+      background:white;
+      border-radius:40px;
+    }
+
+    .goal h2{
+      font-size:60px;
+      margin-bottom:30px;
+    }
+
+    .goal p{
+      max-width:800px;
+      margin:auto;
+      color:#555;
+      font-size:18px;
+      margin-bottom:50px;
+    }
+
+    .goal-btn{
+      display:inline-block;
+      padding:18px 40px;
+      background:black;
+      color:white;
+      border-radius:50px;
+      transition:0.3s;
+    }
+
+    .goal-btn:hover{
+      background:#333;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:50px 20px;
+      text-align:center;
+      color:#777;
+      font-size:14px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1024px){
+
+      .philosophy-wrap,
+      .style-grid,
+      .process-wrap{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .about-grid{
+        grid-template-columns:1fr;
+      }
+
+      .about-image{
+        height:500px;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:48px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      nav ul{
+        display:none;
+      }
+
+      .section-title{
+        font-size:38px;
+      }
+
+      .philosophy-wrap,
+      .style-grid,
+      .process-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .style-section{
+        padding:50px 30px;
+      }
+
+      .goal h2{
+        font-size:42px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-<!-- 전체 컨테이너 -->
-<table width="800" 
-    align="center" border="0">
+  <!-- HERO -->
 
-<!-- 헤더 -->
-<tr>
-<td bgcolor="#dddddd" align="center">
-<h1>내가 생각하는 디자인</h1>
-<p>나의 디자인 철학</p>
-</td>
-</tr>
+  <header>
+    <div class="hero">
+      <h1>내가 생각하는 디자인</h1>
+      <p>
+        감각적인 시선과 논리적인 구조를 바탕으로<br>
+        의미를 전달하는 디자이너를 지향합니다.
+      </p>
+    </div>
+  </header>
 
-<!-- 자기소개 -->
-<tr>
-<td bgcolor="#f5f5f5">
-<h2>1. 자기소개</h2>
-<p>
-감각적인 시선으로 대상을 해석하는 디자이너를 지향합니다.
-의미와 구조를 함께 고민하는 디자인을 추구합니다.
-</p>
-<ul>
-<li>시각적 해석과 재구성</li>
-<li>구조 중심 디자인</li>
-<li>일상 속 아이디어 발견</li>
-</ul>
-</td>
-</tr>
+  <!-- NAV -->
 
-<!-- 디자인 정의 -->
-<tr>
-<td>
-<h2>2. 내가 생각하는 디자인</h2>
-<p><b>의미를 전달하는 시각적 언어</b></p>
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">DESIGN PHILOSOPHY</div>
 
-<ul>
-<li>정보 전달</li>
-<li>감정 표현</li>
-<li>소통의 수단</li>
-</ul>
-</td>
-</tr>
+      <ul>
+        <li><a href="#about">소개</a></li>
+        <li><a href="#philosophy">디자인 철학</a></li>
+        <li><a href="#style">스타일</a></li>
+        <li><a href="#process">프로세스</a></li>
+        <li><a href="#goal">목표</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<!-- 스타일 -->
-<tr>
-<td bgcolor="#f5f5f5">
-<h2>3. 나의 디자인 스타일</h2>
-<ul>
-<li>미니멀 디자인</li>
-<li>핵심 요소 강조</li>
-<li>균형 잡힌 레이아웃</li>
-</ul>
-</td>
-</tr>
+  <!-- ABOUT -->
 
-<!-- 중요 요소 -->
-<tr>
-<td>
-<h2>4. 디자인에서 중요한 것</h2>
-<ul>
-<li>논리적인 구조</li>
-<li>명확한 의도</li>
-<li>설득력 있는 결과</li>
-</ul>
-</td>
-</tr>
+  <section id="about">
 
-<!-- 목표 -->
-<tr>
-<td bgcolor="#f5f5f5">
-<h2>5. 앞으로의 목표</h2>
-<ul>
-<li>나만의 스타일 확립</li>
-<li>포트폴리오 강화</li>
-<li>기획부터 실행까지 가능한 디자이너</li>
-</ul>
-</td>
-</tr>
+    <h2 class="section-title">01. 자기소개</h2>
+    <p class="section-subtitle">
+      단순히 보기 좋은 디자인이 아닌,
+      의미와 구조를 함께 고민하는 디자이너입니다.
+    </p>
 
-<!-- 이미지 영역 -->
-<tr>
-<td align="center">
-<h3>My Mood Image</h3>
-<img src="https://via.placeholder.com/400x200" alt="이미지">
-</td>
-</tr>
+    <div class="about-grid">
 
-</table>
+      <div class="about-image"></div>
+
+      <div class="about-text">
+
+        <h3>
+          시각을 통해 의미를 해석합니다.
+        </h3>
+
+        <p>
+          저는 디자인을 단순한 장식이 아니라,
+          생각과 감정을 전달하는 하나의 언어라고 생각합니다.
+          작은 요소 하나에도 이유와 목적이 있어야 하며,
+          사용자에게 자연스럽게 전달되는 구조를 중요하게 생각합니다.
+        </p>
+
+        <p>
+          특히 편집디자인과 브랜딩 분야에 관심이 많으며,
+          정보의 흐름과 시각적 리듬을 통해
+          브랜드가 가진 이야기를 효과적으로 전달하고자 합니다.
+        </p>
+
+        <p>
+          일상 속 사물과 환경에서 아이디어를 발견하고,
+          그것을 새로운 시각으로 재구성하는 과정을 좋아합니다.
+          디자인은 결국 사람과 사람 사이를 연결하는 과정이라고 믿고 있습니다.
+        </p>
+
+        <div class="keyword-box">
+          <div class="keyword">시각적 해석</div>
+          <div class="keyword">구조 중심 디자인</div>
+          <div class="keyword">브랜딩</div>
+          <div class="keyword">편집디자인</div>
+          <div class="keyword">미니멀 디자인</div>
+          <div class="keyword">정보 전달</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PHILOSOPHY -->
+
+  <section id="philosophy">
+
+    <h2 class="section-title">02. 내가 생각하는 디자인</h2>
+    <p class="section-subtitle">
+      디자인은 단순히 아름다움을 만드는 작업이 아니라,
+      의미를 전달하고 경험을 설계하는 과정입니다.
+    </p>
+
+    <div class="philosophy-wrap">
+
+      <div class="card">
+        <h3>정보 전달</h3>
+
+        <p>
+          디자인은 복잡한 정보를 쉽게 이해할 수 있도록
+          정리하고 전달해야 합니다.
+        </p>
+
+        <ul>
+          <li>명확한 정보 구조</li>
+          <li>가독성을 고려한 레이아웃</li>
+          <li>핵심 메시지 강조</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>감정 표현</h3>
+
+        <p>
+          색상과 형태, 여백과 타이포그래피를 통해
+          감정과 분위기를 전달할 수 있다고 생각합니다.
+        </p>
+
+        <ul>
+          <li>브랜드의 감성 표현</li>
+          <li>사용자 경험 중심 디자인</li>
+          <li>시각적 몰입감 형성</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>소통의 수단</h3>
+
+        <p>
+          디자인은 사람과 브랜드,
+          사람과 정보를 연결하는 중요한 소통의 도구입니다.
+        </p>
+
+        <ul>
+          <li>직관적인 인터페이스</li>
+          <li>사용자 중심 사고</li>
+          <li>효율적인 메시지 전달</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STYLE -->
+
+  <section id="style">
+
+    <div class="style-section">
+
+      <h2 class="section-title">03. 나의 디자인 스타일</h2>
+
+      <p class="section-subtitle" style="color:#aaa;">
+        불필요한 요소를 줄이고,
+        핵심이 더욱 선명하게 보이는 디자인을 추구합니다.
+      </p>
+
+      <div class="style-grid">
+
+        <div class="style-item">
+          <h4>미니멀 디자인</h4>
+
+          <p>
+            복잡한 장식보다는 핵심 요소를 중심으로
+            간결하게 정리된 디자인을 선호합니다.
+          </p>
+        </div>
+
+        <div class="style-item">
+          <h4>구조와 균형</h4>
+
+          <p>
+            시각적인 아름다움뿐 아니라
+            논리적인 구조와 정보 흐름을 중요하게 생각합니다.
+          </p>
+        </div>
+
+        <div class="style-item">
+          <h4>강조와 대비</h4>
+
+          <p>
+            중요한 정보가 자연스럽게 눈에 들어오도록
+            크기와 여백, 대비를 적극 활용합니다.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROCESS -->
+
+  <section id="process">
+
+    <h2 class="section-title">04. 디자인 프로세스</h2>
+
+    <p class="section-subtitle">
+      아이디어를 시각적으로 구현하기까지의 과정을 중요하게 생각합니다.
+    </p>
+
+    <div class="process-wrap">
+
+      <div class="process">
+        <span>STEP 01</span>
+        <h3>Research</h3>
+        <p>
+          브랜드와 사용자,
+          시장 환경을 분석하며 프로젝트의 방향성을 설정합니다.
+        </p>
+      </div>
+
+      <div class="process">
+        <span>STEP 02</span>
+        <h3>Concept</h3>
+        <p>
+          핵심 메시지를 정의하고
+          시각적 컨셉과 키워드를 정리합니다.
+        </p>
+      </div>
+
+      <div class="process">
+        <span>STEP 03</span>
+        <h3>Visualize</h3>
+        <p>
+          타이포그래피와 레이아웃,
+          컬러 시스템을 통해 시각화합니다.
+        </p>
+      </div>
+
+      <div class="process">
+        <span>STEP 04</span>
+        <h3>Refine</h3>
+        <p>
+          완성도를 높이기 위해
+          반복적인 수정과 디테일 작업을 진행합니다.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GOAL -->
+
+  <section id="goal">
+
+    <div class="goal">
+
+      <h2>앞으로의 목표</h2>
+
+      <p>
+        단순히 결과물만 만드는 디자이너가 아니라,
+        브랜드의 방향성과 메시지를 함께 고민할 수 있는
+        디자이너로 성장하고 싶습니다.
+        기획부터 실행까지 연결할 수 있는 역량을 키우며,
+        나만의 디자인 언어를 구축해 나가는 것이 목표입니다.
+      </p>
+
+      <a href="#" class="goal-btn">PORTFOLIO VIEW</a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 DESIGN PORTFOLIO · 김혜진
+  </footer>
 
 </body>
 </html>
