@@ -1,14 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>내가 추구하는 디자인</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
   <style>
 
@@ -20,9 +11,9 @@
 
     body{
       font-family:'Noto Sans KR', sans-serif;
-      background:#d3d6a6;
+      background:#dce1be;
       color:#222;
-      line-height:1.9;
+      line-height:1.8;
     }
 
     a{
@@ -30,27 +21,19 @@
       color:inherit;
     }
 
-    img{
-      width:100%;
-      display:block;
-    }
-
-    /* HEADER */
+    /* 헤더 */
 
     header{
-      width:100%;
-      padding:30px 0;
-      border-bottom:1px solid rgba(0,0,0,0.08);
-      background:#f4f1eb;
+      background:white;
+      border-bottom:1px solid #ddd;
+      padding:25px 0;
       position:sticky;
       top:0;
-      z-index:100;
-      backdrop-filter:blur(10px);
     }
 
     .header-inner{
       width:90%;
-      max-width:1200px;
+      max-width:1000px;
       margin:auto;
       display:flex;
       justify-content:space-between;
@@ -58,229 +41,136 @@
     }
 
     .logo{
-      font-size:22px;
-      font-weight:800;
-      letter-spacing:-1px;
+      font-size:24px;
+      font-weight:700;
     }
 
     nav ul{
       display:flex;
-      gap:35px;
+      gap:25px;
       list-style:none;
-    }
-
-    nav li{
-      font-size:15px;
       color:#666;
-      transition:0.3s;
+      font-size:15px;
     }
 
-    nav li:hover{
-      color:black;
-    }
-
-    /* HERO */
-
-    .hero{
-      width:90%;
-      max-width:1200px;
-      margin:100px auto 140px;
-      display:grid;
-      grid-template-columns:1.2fr 1fr;
-      gap:70px;
-      align-items:center;
-    }
-
-    .hero-text span{
-      font-size:14px;
-      color:#888;
-      letter-spacing:1px;
-    }
-
-    .hero-text h1{
-      font-size:72px;
-      line-height:1.15;
-      margin:25px 0;
-      letter-spacing:-3px;
-    }
-
-    .hero-text p{
-      color:#555;
-      font-size:18px;
-      max-width:520px;
-    }
-
-    .hero-image{
-      height:700px;
-      border-radius:30px;
-      overflow:hidden;
-    }
-
-    .hero-image img{
-      height:100%;
-      object-fit:cover;
-    }
-
-    /* MAIN */
+    /* 메인 */
 
     .container{
       width:90%;
-      max-width:1200px;
+      max-width:1000px;
+      margin:50px auto;
+    }
+
+    /* 프로필 영역 */
+
+    .profile{
+      background:white;
+      border-radius:20px;
+      padding:50px;
+      margin-bottom:40px;
+      text-align:center;
+    }
+
+    .profile-img{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      margin:0 auto 25px;
+      overflow:hidden;
+    }
+
+    .profile-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .profile h1{
+      font-size:42px;
+      margin-bottom:15px;
+    }
+
+    .profile p{
+      color:#666;
+      font-size:17px;
+      max-width:600px;
       margin:auto;
     }
 
-    .section{
-      margin-bottom:140px;
-    }
+    /* 카드 */
 
-    .section-title{
-      font-size:48px;
-      margin-bottom:20px;
-      letter-spacing:-2px;
-    }
-
-    .section-desc{
-      color:#666;
-      margin-bottom:50px;
-      font-size:17px;
-    }
-
-    /* BLOG CARD */
-
-    .blog-card{
+    .card{
       background:white;
-      border-radius:30px;
-      overflow:hidden;
-      margin-bottom:40px;
-      box-shadow:0 10px 40px rgba(0,0,0,0.04);
+      border-radius:20px;
+      padding:40px;
+      margin-bottom:30px;
     }
 
-    .blog-image{
-      height:350px;
-      overflow:hidden;
-    }
-
-    .blog-image img{
-      height:100%;
-      object-fit:cover;
-      transition:0.5s;
-    }
-
-    .blog-card:hover img{
-      transform:scale(1.05);
-    }
-
-    .blog-content{
-      padding:50px;
-    }
-
-    .blog-category{
+    .card span{
       font-size:13px;
       color:#888;
-      margin-bottom:15px;
-      letter-spacing:1px;
     }
 
-    .blog-content h3{
-      font-size:36px;
-      margin-bottom:25px;
-      letter-spacing:-1px;
+    .card h2{
+      margin:10px 0 25px;
+      font-size:32px;
     }
 
-    .blog-content p{
+    .card p{
       color:#555;
-      margin-bottom:25px;
-      font-size:17px;
+      margin-bottom:20px;
     }
 
-    .blog-content ul{
+    .card ul{
       padding-left:20px;
     }
 
-    .blog-content li{
+    .card li{
       margin-bottom:10px;
       color:#444;
     }
 
-    /* GRID */
+    /* 두개 카드 */
 
     .grid{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:35px;
+      gap:25px;
     }
 
-    .small-card{
-      background:white;
-      padding:45px;
-      border-radius:30px;
-      box-shadow:0 10px 40px rgba(0,0,0,0.04);
-    }
-
-    .small-card span{
-      font-size:13px;
-      color:#888;
-      letter-spacing:1px;
-    }
-
-    .small-card h3{
-      margin:20px 0;
-      font-size:28px;
-    }
-
-    .small-card p{
-      color:#555;
-      font-size:16px;
-    }
-
-    /* QUOTE */
+    /* 인용문 */
 
     .quote{
-      margin:150px 0;
-      text-align:center;
-      padding:120px 30px;
-      background:#1e1e1e;
-      border-radius:40px;
+      background:#222;
       color:white;
+      text-align:center;
+      padding:80px 40px;
+      border-radius:20px;
+      margin:40px 0;
     }
 
     .quote h2{
-      font-size:52px;
-      line-height:1.4;
-      font-weight:700;
-      letter-spacing:-2px;
+      font-size:36px;
+      margin-bottom:20px;
+      line-height:1.5;
     }
 
     .quote p{
-      margin-top:30px;
-      color:#aaa;
-      font-size:18px;
+      color:#bbb;
     }
 
-    /* FOOTER */
+    /* footer */
 
     footer{
       text-align:center;
-      padding:60px 20px;
-      color:#777;
+      padding:50px 20px;
+      color:#888;
       font-size:14px;
     }
 
-    /* MOBILE */
+    /* 반응형 */
 
-    @media(max-width:900px){
-
-      .hero{
-        grid-template-columns:1fr;
-      }
-
-      .hero-text h1{
-        font-size:52px;
-      }
-
-      .hero-image{
-        height:500px;
-      }
+    @media(max-width:768px){
 
       .grid{
         grid-template-columns:1fr;
@@ -290,37 +180,42 @@
         display:none;
       }
 
-      .section-title{
-        font-size:38px;
+      .profile h1{
+        font-size:32px;
+      }
+
+      .card h2{
+        font-size:26px;
       }
 
       .quote h2{
-        font-size:34px;
+        font-size:28px;
       }
 
     }
 
   </style>
+
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- 헤더 -->
 
   <header>
 
     <div class="header-inner">
 
       <div class="logo">
-        KIM HYEJIN
+         Web Design
       </div>
 
       <nav>
         <ul>
-          <li><a href="#">소개</a></li>
-          <li><a href="#">디자인 철학</a></li>
-          <li><a href="#">스타일</a></li>
-          <li><a href="#">기록</a></li>
+          <li>소개</li>
+          <li>디자인 철학</li>
+          <li>스타일</li>
+          <li>목표</li>
         </ul>
       </nav>
 
@@ -328,226 +223,140 @@
 
   </header>
 
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <div class="hero-text">
-
-      <span>VISUAL DESIGN</span>
-
-      <h1>
-        디자인은<br>
-        의미를 전달하는<br>
-        시각 언어라고 생각합니다.
-      </h1>
-
-      <p>
-        감각적인 시선으로 대상을 해석하고,
-        구조와 흐름을 통해 메시지를 전달하는 디자인을 지향합니다.
-        단순히 예쁜 결과물이 아니라,
-        사람과 브랜드를 연결하는 경험을 만들고 싶습니다.
-      </p>
-
-    </div>
-
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop">
-    </div>
-
-  </section>
-
-  <!-- CONTENT -->
+  <!-- 메인 -->
 
   <main class="container">
 
-    <!-- ABOUT -->
+    <!-- 프로필 -->
 
-    <section class="section">
+    <section class="profile">
 
-      <div class="blog-card">
-
-        <div class="blog-image">
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop">
-        </div>
-
-        <div class="blog-content">
-
-          <div class="blog-category">
-            ABOUT ME
-          </div>
-
-          <h3>
-            시각을 통해 의미를 재구성하는 디자이너
-          </h3>
-
-          <p>
-            저는 디자인을 단순한 장식이 아닌,
-            생각과 감정을 전달하는 하나의 언어라고 생각합니다.
-            작은 요소 하나에도 이유와 목적이 있어야 하며,
-            사용자가 자연스럽게 이해할 수 있는 구조를 중요하게 생각합니다.
-          </p>
-
-          <p>
-            특히 편집디자인과 브랜딩에 관심이 많으며,
-            정보와 감정을 균형 있게 담아내는 디자인을 좋아합니다.
-            복잡한 내용을 정리하고,
-            그것을 시각적으로 설득력 있게 전달하는 과정에 흥미를 느낍니다.
-          </p>
-
-          <ul>
-            <li>시각적 해석과 재구성</li>
-            <li>구조 중심 디자인</li>
-            <li>브랜드 스토리 전달</li>
-            <li>미니멀한 레이아웃</li>
-          </ul>
-
-        </div>
-
+      <div class="profile-img">
+        <img src="capyzou.png">
       </div>
 
-    </section>
+      <h1>Kim Hyejin</h1>
 
-    <!-- PHILOSOPHY -->
-
-    <section class="section">
-
-      <h2 class="section-title">
-        내가 생각하는 디자인
-      </h2>
-
-      <p class="section-desc">
-        디자인은 단순히 보기 위한 것이 아니라,
-        정보를 이해하고 감정을 경험하게 만드는 과정이라고 생각합니다.
+      <p>
+        감각적인 시선으로 대상을 해석하고,
+        의미와 구조를 함께 고민하는 디자인을 추구합니다.
+        보기 좋은 것에서 끝나는 것이 아니라,
+        메시지를 전달할 수 있는 디자인을 만들고 싶습니다.
       </p>
 
-      <div class="grid">
+    </section>
 
-        <div class="small-card">
+    <!-- 자기소개 -->
 
-          <span>01</span>
+    <section class="card">
 
-          <h3>정보를 전달하는 디자인</h3>
+      <span>ABOUT ME</span>
 
-          <p>
-            디자인은 복잡한 내용을 쉽게 이해할 수 있도록
-            구조화해야 합니다.
-            사용자가 자연스럽게 흐름을 따라갈 수 있는
-            레이아웃과 정보 구성을 중요하게 생각합니다.
-          </p>
+      <h2>1. 자기소개</h2>
 
-        </div>
+      <p>
+        저는 일상 속에서 아이디어를 발견하고,
+        그것을 시각적으로 재구성하는 과정을 좋아합니다.
+        특히 편집디자인과 브랜딩 분야에 관심이 많으며,
+        정보를 효과적으로 전달할 수 있는 레이아웃과 구조를 중요하게 생각합니다.
+      </p>
 
-        <div class="small-card">
+      <p>
+        디자인은 단순히 예쁜 결과물을 만드는 작업이 아니라,
+        사람과 브랜드를 연결하는 과정이라고 생각합니다.
+      </p>
 
-          <span>02</span>
+      <ul>
+        <li>시각적 해석과 재구성</li>
+        <li>구조 중심 디자인</li>
+        <li>미니멀한 레이아웃</li>
+        <li>브랜드 스토리 전달</li>
+      </ul>
 
-          <h3>감정을 표현하는 디자인</h3>
+    </section>
 
-          <p>
-            색상과 타이포그래피,
-            여백과 이미지의 분위기를 통해
-            브랜드가 가진 감정과 이야기를 전달할 수 있다고 생각합니다.
-          </p>
+    <!-- 디자인 철학 -->
 
-        </div>
+    <section class="grid">
+
+      <div class="card">
+
+        <span>DESIGN</span>
+
+        <h2>2. 내가 생각하는 디자인</h2>
+
+        <p>
+          디자인은 정보를 전달하고,
+          감정을 표현하며,
+          사람과 사람을 연결하는 시각 언어라고 생각합니다.
+        </p>
+
+        <ul>
+          <li>정보 전달</li>
+          <li>감정 표현</li>
+          <li>소통의 수단</li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <span>STYLE</span>
+
+        <h2>3. 나의 디자인 스타일</h2>
+
+        <p>
+          불필요한 요소를 줄이고,
+          핵심이 더 잘 보이도록 구성하는 디자인을 좋아합니다.
+        </p>
+
+        <ul>
+          <li>미니멀 디자인</li>
+          <li>균형 잡힌 레이아웃</li>
+          <li>명확한 정보 구조</li>
+        </ul>
 
       </div>
 
     </section>
 
-    <!-- QUOTE -->
+    <!-- 인용문 -->
 
     <section class="quote">
 
       <h2>
-        “좋은 디자인은 단순히 보이는 것이 아니라,<br>
-        자연스럽게 이해되는 것이다.”
+        “좋은 디자인은<br>
+        자연스럽게 이해되는 디자인이다.”
       </h2>
 
       <p>
-        내가 중요하게 생각하는 디자인의 방향성
+        내가 중요하게 생각하는 디자인 방향성
       </p>
 
     </section>
 
-    <!-- STYLE -->
+    <!-- 목표 -->
 
-    <section class="section">
+    <section class="card">
 
-      <div class="blog-card">
+      <span>GOAL</span>
 
-        <div class="blog-image">
-          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop">
-        </div>
+      <h2>4. 앞으로의 목표</h2>
 
-        <div class="blog-content">
+      <p>
+        단순히 결과물만 만드는 디자이너가 아니라,
+        브랜드와 사용자에 대해 함께 고민할 수 있는 디자이너로 성장하고 싶습니다.
+      </p>
 
-          <div class="blog-category">
-            DESIGN STYLE
-          </div>
-
-          <h3>
-            미니멀하지만 명확한 디자인
-          </h3>
-
-          <p>
-            저는 불필요한 요소를 줄이고,
-            핵심 메시지가 더욱 선명하게 보이는 디자인을 선호합니다.
-            단순한 레이아웃 안에서도 강한 흐름과 리듬을 만드는 것을 중요하게 생각합니다.
-          </p>
-
-          <p>
-            특히 여백과 대비를 적극적으로 활용하며,
-            정보의 우선순위를 시각적으로 명확하게 전달하려고 합니다.
-            사용자가 오래 머무르지 않아도 핵심을 이해할 수 있는 디자인을 추구합니다.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- GOAL -->
-
-    <section class="section">
-
-      <div class="grid">
-
-        <div class="small-card">
-
-          <span>GOAL</span>
-
-          <h3>나만의 디자인 언어 만들기</h3>
-
-          <p>
-            다양한 프로젝트 경험을 통해
-            나만의 시각적 스타일과 디자인 철학을 더욱 명확하게 구축하고 싶습니다.
-          </p>
-
-        </div>
-
-        <div class="small-card">
-
-          <span>VISION</span>
-
-          <h3>기획부터 실행까지</h3>
-
-          <p>
-            단순히 결과물만 만드는 디자이너가 아니라,
-            브랜드의 방향성과 메시지를 함께 고민할 수 있는 디자이너로 성장하고 싶습니다.
-          </p>
-
-        </div>
-
-      </div>
+      <p>
+        다양한 프로젝트 경험을 통해
+        나만의 디자인 스타일을 더욱 명확하게 만들고,
+        기획부터 실행까지 가능한 디자이너가 되는 것이 목표입니다.
+      </p>
 
     </section>
 
   </main>
-
-  <!-- FOOTER -->
 
 
 </body>
