@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Noto Sans KR', sans-serif;
+      background:#f4f4f4
+      ;
+      color:#222;
+      line-height:1.8;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* 헤더 */
+
+    header{
+      background:white;
+      border-bottom:1px solid #ddd;
+      padding:25px 0;
+      position:sticky;
+      top:0;
+    }
+
+    .header-inner{
+      width:90%;
+      max-width:1000px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:700;
+    }
+
+    nav ul{
+      display:flex;
+      gap:25px;
+      list-style:none;
+      color:#666;
+      font-size:15px;
+    }
+
+    /* 메인 */
+
+    .container{
+      width:90%;
+      max-width:1000px;
+      margin:50px auto;
+    }
+
+    /* 프로필 영역 */
+
+    .profile{
+      background:white;
+      border-radius:20px;
+      padding:50px;
+      margin-bottom:40px;
+      text-align:center;
+    }
+
+    .profile-img{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      margin:0 auto 25px;
+      overflow:hidden;
+    }
+
+    .profile-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .profile h1{
+      font-size:42px;
+      margin-bottom:15px;
+    }
+
+    .profile p{
+      color:#666;
+      font-size:17px;
+      max-width:600px;
+      margin:auto;
+    }
+
+    /* 카드 */
+
+    .card{
+      background:white;
+      border-radius:20px;
+      padding:40px;
+      margin-bottom:30px;
+    }
+
+    .card span{
+      font-size:13px;
+      color:#888;
+    }
+
+    .card h2{
+      margin:10px 0 25px;
+      font-size:32px;
+    }
+
+    .card p{
+      color:#555;
+      margin-bottom:20px;
+    }
+
+    .card ul{
+      padding-left:20px;
+    }
+
+    .card li{
+      margin-bottom:10px;
+      color:#444;
+    }
+
+    /* 두개 카드 */
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px;
+    }
+
+    /* 인용문 */
+
+    .quote{
+      background:#222;
+      color:white;
+      text-align:center;
+      padding:80px 40px;
+      border-radius:20px;
+      margin:40px 0;
+    }
+
+    .quote h2{
+      font-size:36px;
+      margin-bottom:20px;
+      line-height:1.5;
+    }
+
+    .quote p{
+      color:#bbb;
+    }
+
+    /* footer */
+
+    footer{
+      text-align:center;
+      padding:50px 20px;
+      color:#888;
+      font-size:14px;
+    }
+
+    /* 반응형 */
+
+    @media(max-width:768px){
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      nav{
+        display:none;
+      }
+
+      .profile h1{
+        font-size:32px;
+      }
+
+      .card h2{
+        font-size:26px;
+      }
+
+      .quote h2{
+        font-size:28px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- 헤더 -->
+
+  <header>
+
+    <div class="header-inner">
+
+      <div class="logo">
+         Web Design
+      </div>
+
+      <nav>
+        <ul>
+          <li>소개</li>
+          <li>디자인 철학</li>
+          <li>스타일</li>
+          <li>목표</li>
+        </ul>
+      </nav>
+
+    </div>
+
+  </header>
+
+  <!-- 메인 -->
+
+  <main class="container">
+
+    <!-- 프로필 -->
+
+    <section class="profile">
+
+      <div class="profile-img">
+        <img src="capyzou.png">
+      </div>
+
+      <h1>Kim Hyejin</h1>
+
+      <p>
+        감각적인 시선으로 대상을 해석하고,
+        의미와 구조를 함께 고민하는 디자인을 추구합니다.
+        보기 좋은 것에서 끝나는 것이 아니라,
+        메시지를 전달할 수 있는 디자인을 만들고 싶습니다.
+      </p>
+
+    </section>
+
+    <!-- 자기소개 -->
+
+    <section class="card">
+
+      <span>ABOUT ME</span>
+
+      <h2>1. 자기소개</h2>
+
+      <p>
+        저는 일상 속에서 아이디어를 발견하고,
+        그것을 시각적으로 재구성하는 과정을 좋아합니다.
+        특히 편집디자인과 브랜딩 분야에 관심이 많으며,
+        정보를 효과적으로 전달할 수 있는 레이아웃과 구조를 중요하게 생각합니다.
+      </p>
+
+      <p>
+        디자인은 단순히 예쁜 결과물을 만드는 작업이 아니라,
+        사람과 브랜드를 연결하는 과정이라고 생각합니다.
+      </p>
+
+      <ul>
+        <li>시각적 해석과 재구성</li>
+        <li>구조 중심 디자인</li>
+        <li>미니멀한 레이아웃</li>
+        <li>브랜드 스토리 전달</li>
+      </ul>
+
+    </section>
+
+    <!-- 디자인 철학 -->
+
+    <section class="grid">
+
+      <div class="card">
+
+        <span>DESIGN</span>
+
+        <h2>2. 내가 생각하는 디자인</h2>
+
+        <p>
+          디자인은 정보를 전달하고,
+          감정을 표현하며,
+          사람과 사람을 연결하는 시각 언어라고 생각합니다.
+        </p>
+
+        <ul>
+          <li>정보 전달</li>
+          <li>감정 표현</li>
+          <li>소통의 수단</li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <span>STYLE</span>
+
+        <h2>3. 나의 디자인 스타일</h2>
+
+        <p>
+          불필요한 요소를 줄이고,
+          핵심이 더 잘 보이도록 구성하는 디자인을 좋아합니다.
+        </p>
+
+        <ul>
+          <li>미니멀 디자인</li>
+          <li>균형 잡힌 레이아웃</li>
+          <li>명확한 정보 구조</li>
+        </ul>
+
+      </div>
+
+    </section>
+
+    <!-- 인용문 -->
+
+    <section class="quote">
+
+      <h2>
+        “좋은 디자인은<br>
+        자연스럽게 이해되는 디자인이다.”
+      </h2>
+
+      <p>
+        내가 중요하게 생각하는 디자인 방향성
+      </p>
+
+    </section>
+
+    <!-- 목표 -->
+
+    <section class="card">
+
+      <span>GOAL</span>
+
+      <h2>4. 앞으로의 목표</h2>
+
+      <p>
+        단순히 결과물만 만드는 디자이너가 아니라,
+        브랜드와 사용자에 대해 함께 고민할 수 있는 디자이너로 성장하고 싶습니다.
+      </p>
+
+      <p>
+        다양한 프로젝트 경험을 통해
+        나만의 디자인 스타일을 더욱 명확하게 만들고,
+        기획부터 실행까지 가능한 디자이너가 되는 것이 목표입니다.
+      </p>
+
+    </section>
+
+  </main>
+
+
+</body>
+</html>
+
