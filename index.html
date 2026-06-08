@@ -1,365 +1,467 @@
 <!DOCTYPE html>
 <html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
+<title>BOSEONG</title>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    body{
-      font-family:'Noto Sans KR', sans-serif;
-      background:#f4f4f4
-      ;
-      color:#222;
-      line-height:1.8;
-    }
+<style>
 
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
+:root{
+--black:#1f271f;
+--green:#405240;
+--sage:#8f998d;
+--cream:#f7f4ef;
+}
 
-    /* 헤더 */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    header{
-      background:white;
-      border-bottom:1px solid #ddd;
-      padding:25px 0;
-      position:sticky;
-      top:0;
-    }
+html{
+scroll-behavior:smooth;
+}
 
-    .header-inner{
-      width:90%;
-      max-width:1000px;
-      margin:auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
+body{
+font-family:'Pretendard',sans-serif;
+background:var(--cream);
+color:var(--black);
+overflow-x:hidden;
+}
 
-    .logo{
-      font-size:24px;
-      font-weight:700;
-    }
+a{
+text-decoration:none;
+color:inherit;
+}
 
-    nav ul{
-      display:flex;
-      gap:25px;
-      list-style:none;
-      color:#666;
-      font-size:15px;
-    }
+/* NAV */
 
-    /* 메인 */
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:25px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+background:rgba(247,244,239,.9);
+backdrop-filter:blur(10px);
+}
 
-    .container{
-      width:90%;
-      max-width:1000px;
-      margin:50px auto;
-    }
+.logo{
+height:55px;
+}
 
-    /* 프로필 영역 */
+nav{
+display:flex;
+gap:40px;
+font-size:.9rem;
+letter-spacing:1px;
+}
 
-    .profile{
-      background:white;
-      border-radius:20px;
-      padding:50px;
-      margin-bottom:40px;
-      text-align:center;
-    }
+nav a{
+transition:.3s;
+}
 
-    .profile-img{
-      width:120px;
-      height:120px;
-      border-radius:50%;
-      margin:0 auto 25px;
-      overflow:hidden;
-    }
+nav a:hover{
+opacity:.5;
+}
 
-    .profile-img img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
+/* HERO */
 
-    .profile h1{
-      font-size:42px;
-      margin-bottom:15px;
-    }
+.hero{
+height:100vh;
+background:
+linear-gradient(
+rgba(0,0,0,.35),
+rgba(0,0,0,.35)
+),
+url("hero.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
 
-    .profile p{
-      color:#666;
-      font-size:17px;
-      max-width:600px;
-      margin:auto;
-    }
+.hero-content h1{
+font-family:'Cormorant Garamond',serif;
+font-size:8rem;
+font-weight:500;
+letter-spacing:4px;
+}
 
-    /* 카드 */
+.hero-content p{
+font-size:1.2rem;
+margin-top:15px;
+letter-spacing:2px;
+}
 
-    .card{
-      background:white;
-      border-radius:20px;
-      padding:40px;
-      margin-bottom:30px;
-    }
+.scroll{
+margin-top:80px;
+font-size:.8rem;
+letter-spacing:4px;
+}
 
-    .card span{
-      font-size:13px;
-      color:#888;
-    }
+/* SECTION */
 
-    .card h2{
-      margin:10px 0 25px;
-      font-size:32px;
-    }
+section{
+padding:140px 10%;
+}
 
-    .card p{
-      color:#555;
-      margin-bottom:20px;
-    }
+.section-number{
+font-size:.9rem;
+letter-spacing:3px;
+margin-bottom:20px;
+color:#666;
+}
 
-    .card ul{
-      padding-left:20px;
-    }
+.section-title{
+font-family:'Cormorant Garamond',serif;
+font-size:4rem;
+font-weight:500;
+margin-bottom:40px;
+}
 
-    .card li{
-      margin-bottom:10px;
-      color:#444;
-    }
+/* PHILOSOPHY */
 
-    /* 두개 카드 */
+.philosophy{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:100px;
+align-items:center;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:25px;
-    }
+.philosophy p{
+font-size:1.2rem;
+line-height:2;
+max-width:500px;
+}
 
-    /* 인용문 */
+.symbol{
+width:300px;
+height:300px;
+border:1px solid #ccc;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:2rem;
+margin:auto;
+}
 
-    .quote{
-      background:#222;
-      color:white;
-      text-align:center;
-      padding:80px 40px;
-      border-radius:20px;
-      margin:40px 0;
-    }
+/* LANDSCAPE */
 
-    .quote h2{
-      font-size:36px;
-      margin-bottom:20px;
-      line-height:1.5;
-    }
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:60px;
+}
 
-    .quote p{
-      color:#bbb;
-    }
+.gallery img{
+width:100%;
+height:500px;
+object-fit:cover;
+}
 
-    /* footer */
+.caption{
+margin-top:15px;
+font-size:.9rem;
+letter-spacing:2px;
+}
 
-    footer{
-      text-align:center;
-      padding:50px 20px;
-      color:#888;
-      font-size:14px;
-    }
+/* COLLECTION */
 
-    /* 반응형 */
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
 
-    @media(max-width:768px){
+.card{
+padding:50px;
+min-height:320px;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+transition:.3s;
+}
 
-      .grid{
-        grid-template-columns:1fr;
-      }
+.card:hover{
+transform:translateY(-10px);
+}
 
-      nav{
-        display:none;
-      }
+.card:nth-child(1){
+background:#ece8df;
+}
 
-      .profile h1{
-        font-size:32px;
-      }
+.card:nth-child(2){
+background:#dfe6dc;
+}
 
-      .card h2{
-        font-size:26px;
-      }
+.card:nth-child(3){
+background:#cfd8cb;
+}
 
-      .quote h2{
-        font-size:28px;
-      }
+.card-number{
+font-size:.8rem;
+margin-bottom:20px;
+}
 
-    }
+.card h3{
+font-family:'Cormorant Garamond',serif;
+font-size:2.5rem;
+margin-bottom:10px;
+}
 
-  </style>
+/* EXPERIENCE */
 
+.experience{
+text-align:center;
+}
+
+.steps{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:50px;
+margin-top:80px;
+}
+
+.step{
+font-family:'Cormorant Garamond',serif;
+font-size:2.2rem;
+}
+
+.arrow{
+font-size:1.5rem;
+}
+
+/* FOOTER */
+
+footer{
+padding:120px 10%;
+background:var(--black);
+color:white;
+}
+
+.footer-title{
+font-family:'Cormorant Garamond',serif;
+font-size:8rem;
+line-height:1;
+margin-bottom:50px;
+}
+
+.footer-links{
+display:flex;
+gap:40px;
+font-size:.9rem;
+letter-spacing:2px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+header{
+padding:20px;
+}
+
+nav{
+display:none;
+}
+
+.hero-content h1{
+font-size:4rem;
+}
+
+.philosophy{
+grid-template-columns:1fr;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.steps{
+flex-direction:column;
+}
+
+.footer-title{
+font-size:4rem;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- 헤더 -->
+<header>
 
-  <header>
+<img src="logo.png" class="logo">
 
-    <div class="header-inner">
+<nav>
+<a href="#philosophy">PHILOSOPHY</a>
+<a href="#landscape">LANDSCAPE</a>
+<a href="#collection">COLLECTION</a>
+<a href="#experience">EXPERIENCE</a>
+</nav>
 
-      <div class="logo">
-         Web Design
-      </div>
+</header>
 
-      <nav>
-        <ul>
-          <li>소개</li>
-          <li>디자인 철학</li>
-          <li>스타일</li>
-          <li>목표</li>
-        </ul>
-      </nav>
+<section class="hero">
 
-    </div>
+<div class="hero-content">
 
-  </header>
+<h1>BOSEONG</h1>
 
-  <!-- 메인 -->
+<p>THE MODERN TEA RITUAL</p>
 
-  <main class="container">
+<div class="scroll">
+SCROLL
+</div>
 
-    <!-- 프로필 -->
+</div>
 
-    <section class="profile">
+</section>
 
-      <div class="profile-img">
-        <img src="capyzou.png">
-      </div>
+<section id="philosophy">
 
-      <h1>Kim Hyejin</h1>
+<div class="section-number">01</div>
 
-      <p>
-        감각적인 시선으로 대상을 해석하고,
-        의미와 구조를 함께 고민하는 디자인을 추구합니다.
-        보기 좋은 것에서 끝나는 것이 아니라,
-        메시지를 전달할 수 있는 디자인을 만들고 싶습니다.
-      </p>
+<h2 class="section-title">Philosophy</h2>
 
-    </section>
+<div class="philosophy">
 
-    <!-- 자기소개 -->
+<div>
 
-    <section class="card">
+<p>
+보성의 자연과 차 문화를
+현대적인 라이프스타일로 재해석합니다.
 
-      <span>ABOUT ME</span>
+차를 마시는 순간이
+하루의 균형을 되찾는 의식이 되도록.
+</p>
 
-      <h2>1. 자기소개</h2>
+</div>
 
-      <p>
-        저는 일상 속에서 아이디어를 발견하고,
-        그것을 시각적으로 재구성하는 과정을 좋아합니다.
-        특히 편집디자인과 브랜딩 분야에 관심이 많으며,
-        정보를 효과적으로 전달할 수 있는 레이아웃과 구조를 중요하게 생각합니다.
-      </p>
+<div class="symbol">
+ZEN
+</div>
 
-      <p>
-        디자인은 단순히 예쁜 결과물을 만드는 작업이 아니라,
-        사람과 브랜드를 연결하는 과정이라고 생각합니다.
-      </p>
+</div>
 
-      <ul>
-        <li>시각적 해석과 재구성</li>
-        <li>구조 중심 디자인</li>
-        <li>미니멀한 레이아웃</li>
-        <li>브랜드 스토리 전달</li>
-      </ul>
+</section>
 
-    </section>
+<section id="landscape">
 
-    <!-- 디자인 철학 -->
+<div class="section-number">02</div>
 
-    <section class="grid">
+<h2 class="section-title">Tea Landscape</h2>
 
-      <div class="card">
+<div class="gallery">
 
-        <span>DESIGN</span>
+<div>
+<img src="field1.jpg">
+<div class="caption">FOG</div>
+</div>
 
-        <h2>2. 내가 생각하는 디자인</h2>
+<div>
+<img src="field2.jpg">
+<div class="caption">LEAF</div>
+</div>
 
-        <p>
-          디자인은 정보를 전달하고,
-          감정을 표현하며,
-          사람과 사람을 연결하는 시각 언어라고 생각합니다.
-        </p>
+<div>
+<img src="field3.jpg">
+<div class="caption">RITUAL</div>
+</div>
 
-        <ul>
-          <li>정보 전달</li>
-          <li>감정 표현</li>
-          <li>소통의 수단</li>
-        </ul>
+</div>
 
-      </div>
+</section>
 
-      <div class="card">
+<section id="collection">
 
-        <span>STYLE</span>
+<div class="section-number">03</div>
 
-        <h2>3. 나의 디자인 스타일</h2>
+<h2 class="section-title">Collection</h2>
 
-        <p>
-          불필요한 요소를 줄이고,
-          핵심이 더 잘 보이도록 구성하는 디자인을 좋아합니다.
-        </p>
+<div class="cards">
 
-        <ul>
-          <li>미니멀 디자인</li>
-          <li>균형 잡힌 레이아웃</li>
-          <li>명확한 정보 구조</li>
-        </ul>
+<div class="card">
+<div class="card-number">01</div>
+<h3>Original</h3>
+<p>클래식 보성 녹차</p>
+</div>
 
-      </div>
+<div class="card">
+<div class="card-number">02</div>
+<h3>Zen</h3>
+<p>차분한 휴식</p>
+</div>
 
-    </section>
+<div class="card">
+<div class="card-number">03</div>
+<h3>Signature</h3>
+<p>현대적 블렌드</p>
+</div>
 
-    <!-- 인용문 -->
+</div>
 
-    <section class="quote">
+</section>
 
-      <h2>
-        “좋은 디자인은<br>
-        자연스럽게 이해되는 디자인이다.”
-      </h2>
+<section id="experience" class="experience">
 
-      <p>
-        내가 중요하게 생각하는 디자인 방향성
-      </p>
+<div class="section-number">04</div>
 
-    </section>
+<h2 class="section-title">Tea Experience</h2>
 
-    <!-- 목표 -->
+<div class="steps">
 
-    <section class="card">
+<div class="step">POUR</div>
 
-      <span>GOAL</span>
+<div class="arrow">→</div>
 
-      <h2>4. 앞으로의 목표</h2>
+<div class="step">STEEP</div>
 
-      <p>
-        단순히 결과물만 만드는 디자이너가 아니라,
-        브랜드와 사용자에 대해 함께 고민할 수 있는 디자이너로 성장하고 싶습니다.
-      </p>
+<div class="arrow">→</div>
 
-      <p>
-        다양한 프로젝트 경험을 통해
-        나만의 디자인 스타일을 더욱 명확하게 만들고,
-        기획부터 실행까지 가능한 디자이너가 되는 것이 목표입니다.
-      </p>
+<div class="step">PAUSE</div>
 
-    </section>
+</div>
 
-  </main>
+</section>
 
+<footer>
+
+<div class="footer-title">
+BOSEONG
+</div>
+
+<div class="footer-links">
+<span>INSTAGRAM</span>
+<span>CONTACT</span>
+<span>EMAIL</span>
+</div>
+
+</footer>
 
 </body>
 </html>
-
