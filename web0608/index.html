@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BOSEONG</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--black:#1f271f;
+--green:#405240;
+--sage:#8f998d;
+--cream:#f7f4ef;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Pretendard',sans-serif;
+background:var(--cream);
+color:var(--black);
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+/* NAV */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:25px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+background:rgba(247,244,239,.9);
+backdrop-filter:blur(10px);
+}
+
+.logo{
+height:55px;
+}
+
+nav{
+display:flex;
+gap:40px;
+font-size:.9rem;
+letter-spacing:1px;
+}
+
+nav a{
+transition:.3s;
+}
+
+nav a:hover{
+opacity:.5;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(
+rgba(0,0,0,.35),
+rgba(0,0,0,.35)
+),
+url("hero.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero-content h1{
+font-family:'Cormorant Garamond',serif;
+font-size:8rem;
+font-weight:500;
+letter-spacing:4px;
+}
+
+.hero-content p{
+font-size:1.2rem;
+margin-top:15px;
+letter-spacing:2px;
+}
+
+.scroll{
+margin-top:80px;
+font-size:.8rem;
+letter-spacing:4px;
+}
+
+/* SECTION */
+
+section{
+padding:140px 10%;
+}
+
+.section-number{
+font-size:.9rem;
+letter-spacing:3px;
+margin-bottom:20px;
+color:#666;
+}
+
+.section-title{
+font-family:'Cormorant Garamond',serif;
+font-size:4rem;
+font-weight:500;
+margin-bottom:40px;
+}
+
+/* PHILOSOPHY */
+
+.philosophy{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:100px;
+align-items:center;
+}
+
+.philosophy p{
+font-size:1.2rem;
+line-height:2;
+max-width:500px;
+}
+
+.symbol{
+width:300px;
+height:300px;
+border:1px solid #ccc;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:2rem;
+margin:auto;
+}
+
+/* LANDSCAPE */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:60px;
+}
+
+.gallery img{
+width:100%;
+height:500px;
+object-fit:cover;
+}
+
+.caption{
+margin-top:15px;
+font-size:.9rem;
+letter-spacing:2px;
+}
+
+/* COLLECTION */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.card{
+padding:50px;
+min-height:320px;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card:nth-child(1){
+background:#ece8df;
+}
+
+.card:nth-child(2){
+background:#dfe6dc;
+}
+
+.card:nth-child(3){
+background:#cfd8cb;
+}
+
+.card-number{
+font-size:.8rem;
+margin-bottom:20px;
+}
+
+.card h3{
+font-family:'Cormorant Garamond',serif;
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+/* EXPERIENCE */
+
+.experience{
+text-align:center;
+}
+
+.steps{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:50px;
+margin-top:80px;
+}
+
+.step{
+font-family:'Cormorant Garamond',serif;
+font-size:2.2rem;
+}
+
+.arrow{
+font-size:1.5rem;
+}
+
+/* FOOTER */
+
+footer{
+padding:120px 10%;
+background:var(--black);
+color:white;
+}
+
+.footer-title{
+font-family:'Cormorant Garamond',serif;
+font-size:8rem;
+line-height:1;
+margin-bottom:50px;
+}
+
+.footer-links{
+display:flex;
+gap:40px;
+font-size:.9rem;
+letter-spacing:2px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+header{
+padding:20px;
+}
+
+nav{
+display:none;
+}
+
+.hero-content h1{
+font-size:4rem;
+}
+
+.philosophy{
+grid-template-columns:1fr;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.steps{
+flex-direction:column;
+}
+
+.footer-title{
+font-size:4rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<img src="logo.png" class="logo">
+
+<nav>
+<a href="#philosophy">PHILOSOPHY</a>
+<a href="#landscape">LANDSCAPE</a>
+<a href="#collection">COLLECTION</a>
+<a href="#experience">EXPERIENCE</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>BOSEONG</h1>
+
+<p>THE MODERN TEA RITUAL</p>
+
+<div class="scroll">
+SCROLL
+</div>
+
+</div>
+
+</section>
+
+<section id="philosophy">
+
+<div class="section-number">01</div>
+
+<h2 class="section-title">Philosophy</h2>
+
+<div class="philosophy">
+
+<div>
+
+<p>
+보성의 자연과 차 문화를
+현대적인 라이프스타일로 재해석합니다.
+
+차를 마시는 순간이
+하루의 균형을 되찾는 의식이 되도록.
+</p>
+
+</div>
+
+<div class="symbol">
+ZEN
+</div>
+
+</div>
+
+</section>
+
+<section id="landscape">
+
+<div class="section-number">02</div>
+
+<h2 class="section-title">Tea Landscape</h2>
+
+<div class="gallery">
+
+<div>
+<img src="field1.jpg">
+<div class="caption">FOG</div>
+</div>
+
+<div>
+<img src="field2.jpg">
+<div class="caption">LEAF</div>
+</div>
+
+<div>
+<img src="field3.jpg">
+<div class="caption">RITUAL</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="collection">
+
+<div class="section-number">03</div>
+
+<h2 class="section-title">Collection</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-number">01</div>
+<h3>Original</h3>
+<p>클래식 보성 녹차</p>
+</div>
+
+<div class="card">
+<div class="card-number">02</div>
+<h3>Zen</h3>
+<p>차분한 휴식</p>
+</div>
+
+<div class="card">
+<div class="card-number">03</div>
+<h3>Signature</h3>
+<p>현대적 블렌드</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="experience" class="experience">
+
+<div class="section-number">04</div>
+
+<h2 class="section-title">Tea Experience</h2>
+
+<div class="steps">
+
+<div class="step">POUR</div>
+
+<div class="arrow">→</div>
+
+<div class="step">STEEP</div>
+
+<div class="arrow">→</div>
+
+<div class="step">PAUSE</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-title">
+BOSEONG
+</div>
+
+<div class="footer-links">
+<span>INSTAGRAM</span>
+<span>CONTACT</span>
+<span>EMAIL</span>
+</div>
+
+</footer>
+
+</body>
+</html>
